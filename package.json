@@ -1,0 +1,33 @@
+{
+	"name": "hono-template",
+	"type": "module",
+	"scripts": {
+		"dev": "tsx watch src/serve.ts",
+		"build": "tsdown",
+		"start": "node dist/serve.mjs",
+		"test": "vitest",
+		"typecheck": "tsc --noEmit",
+		"format": "biome format --write",
+		"lint": "biome lint",
+		"lint:fix": "biome lint --write --unsafe"
+	},
+	"dependencies": {
+		"@hono/node-server": "^1.19.6",
+		"hono": "^4.10.5",
+		"zod": "^4.1.12"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.3.5",
+		"@types/node": "^20.11.17",
+		"tsdown": "^0.16.3",
+		"tsx": "^4.7.1",
+		"typescript": "^5.8.3",
+		"vitest": "^4.0.8"
+	},
+	"main": "./dist/serve.mjs",
+	"module": "./dist/serve.mjs",
+	"exports": {
+		".": "./dist/serve.mjs",
+		"./package.json": "./package.json"
+	}
+}
